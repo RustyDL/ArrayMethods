@@ -1,4 +1,4 @@
-// Initialize an array of grocery items
+
 const groceryList = [
   { name: "Apples", price: 1.5 },
   { name: "Bananas", price: 1.0 },
@@ -7,19 +7,16 @@ const groceryList = [
   { name: "Bread", price: 2.5 },
 ];
 
-// Function to get user input using prompt
 function getUserInput() {
   const userInput = prompt("Enter a grocery item (e.g., 'Oranges'): ");
   return userInput;
 }
 
-// Function to find a specific item
 function findGroceryItem(itemName) {
   const foundItem = groceryList.find((item) => item.name === itemName);
   return foundItem;
 }
 
-// Function to filter items based on a condition
 function filterGroceryItems(priceThreshold) {
   const affordableItems = groceryList.filter(
     (item) => item.price <= priceThreshold
@@ -27,14 +24,12 @@ function filterGroceryItems(priceThreshold) {
   return affordableItems;
 }
 
-// Function to calculate the total price of items
 function calculateTotalPrice() {
   const totalPrice = groceryList.reduce((total, item) => {
     total + item.price}, 0);
   return totalPrice;
 }
 
-// Function to change the name of each item
 function mapItemNames() {
   const updatedList = groceryList.map((item) => {
     return { ...item, name: item.name.toUpperCase() };
@@ -42,13 +37,11 @@ function mapItemNames() {
   return updatedList;
 }
 
-// Function to slice the array
 function sliceGroceryList(start, end) {
   const slicedList = groceryList.slice(start, end);
   return slicedList;
 }
 
-// Main program
 const userInput = getUserInput();
 if (userInput) {
   const foundItem = findGroceryItem(userInput);
